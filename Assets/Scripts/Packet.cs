@@ -1,14 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Packet : MonoBehaviour
 {
     [SerializeField] private GameObject enemyColliderObject;
-    
     [SerializeField] private float initialSpeed = 5;
     public float damage = 1;
+
+    [NonSerialized] public UnityEvent onDestroy = new UnityEvent();
     
     private Rigidbody2D body;
     private readonly List<PacketModifier> collidedModifiers = new List<PacketModifier>();
@@ -16,6 +19,16 @@ public class Packet : MonoBehaviour
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.transform.parent != null && other.transform.parent.TryGetComponent(out EnemyController enemy))
+        {
+            enemy.TakeDamage(damage);
+            Destroy(gameObject);
+            onDestroy.Invoke();
+        }
     }
 
     public static Packet InstantiatePacket(GameObject packetPrefab, Vector2 position, Vector2 direction)
@@ -39,9 +52,10 @@ public class Packet : MonoBehaviour
         return true;
     }
 
-    public void MultiplyScale(float scaleMultiplier)
+    public void AddScale(float scaleToAdd)
     {
-        enemyColliderObject.transform.DOScale(transform.localScale * scaleMultiplier, 0.2f);
+        Tween tween = enemyColliderObject.transform.DOScale(enemyColliderObject.transform.localScale + Vector3.one*scaleToAdd, 0.2f);
+        onDestroy.AddListener(() => tween.Kill());
     }
 
     public void MultiplySpeed(float speedMultiplier)
