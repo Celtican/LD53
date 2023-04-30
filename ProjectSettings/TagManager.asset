@@ -16,7 +16,7 @@ TagManager:
   - BulletTower
   - BulletEnemy
   - LoseCollider
-  - 
+  - TowerTooltip
   - 
   - 
   - 

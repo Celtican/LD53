@@ -65,19 +65,21 @@ public class TowerPlacementButton : MonoBehaviour, IPointerEnterHandler, IPointe
     public void OnPointerEnter(PointerEventData eventData)
     {
         isMouseOver = true;
+        TowerTooltipController.instance.View(towerPrefab.GetComponent<Tower>());
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         isMouseOver = false;
+        TowerTooltipController.instance.StopViewing(towerPrefab.GetComponent<Tower>());
     }
 
     public void ReleaseTower(Vector3 worldPos)
     {
-        if (!TowerController.instance.IsTowerPlacedAtWorldPosition(worldPos))
-        {
-            TowerController.instance.PlaceTowerAtWorldPosition(towerPrefab, worldPos);
-            onPlace.Invoke();
-        }
+        if (CameraController.instance.IsPosOutOfBounds(worldPos) ||
+            TowerController.instance.IsTowerPlacedAtWorldPosition(worldPos))
+            return;
+        TowerController.instance.PlaceTowerAtWorldPosition(towerPrefab, worldPos);
+        onPlace.Invoke();
     }
 }

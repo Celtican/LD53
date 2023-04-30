@@ -21,13 +21,22 @@ public class Packet : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
     }
 
+    private void Update()
+    {
+        if (CameraController.instance.IsPosOutOfBounds(transform.position))
+        {
+            onDestroy.Invoke();
+            Destroy(gameObject);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.transform.parent != null && other.transform.parent.TryGetComponent(out EnemyController enemy))
         {
             enemy.TakeDamage(damage);
-            Destroy(gameObject);
             onDestroy.Invoke();
+            Destroy(gameObject);
         }
     }
 

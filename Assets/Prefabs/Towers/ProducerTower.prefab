@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4700507428014727940, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
+      propertyPath: towerName
+      value: Ping
+      objectReference: {fileID: 0}
+    - target: {fileID: -4700507428014727940, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
+      propertyPath: towerType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4700507428014727940, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
+      propertyPath: towerDescription
+      value: Send a packet projectile leftbound.
+      objectReference: {fileID: 0}
     - target: {fileID: 828144633489455872, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: m_Name
       value: ProducerTower

@@ -19,7 +19,7 @@ public class PacketSpawner : MonoBehaviour
         if (timeUntilSpawn <= 0)
         {
             timeUntilSpawn += timeBetweenSpawns;
-            Packet.InstantiatePacket(packetPrefab, transform.position, direction);
+            if (!CameraController.instance.IsPosOutOfBounds(transform.position)) Packet.InstantiatePacket(packetPrefab, transform.position, direction);
         }
     }
 }

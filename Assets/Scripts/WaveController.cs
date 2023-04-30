@@ -2,13 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WaveController : MonoBehaviour
 {
     [Tooltip("The list of waves that are spawned in this level.")]
     public List<Wave> waves;
+
+    public UnityEvent onEndWave;
     
     private float timeSinceLastSpawn = 0f;
+
+    private void Start()
+    {
+        onEndWave.AddListener(() => CameraController.instance.MoveHorizontally());
+    }
 
     // Update is called once per frame
     void Update()
@@ -42,6 +50,8 @@ public class WaveController : MonoBehaviour
         {
             // If we don't have any enemies to spawn, and we've waited enough time, clear the current wave.
             waves.RemoveAt(0);
+            
+            onEndWave.Invoke();
             
             // And reset the time since last spawn.
             timeSinceLastSpawn = 0;

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [Tooltip("How fast this enemy moves (in units per second).")]
     public float movementSpeed = 2f;
 
     [Tooltip("How much damage this enemy can take before it dies.")]
@@ -44,7 +40,7 @@ public class EnemyController : MonoBehaviour
         // distance from its parent, the localPosition is therefor the distance (and direction) to the enemy's target.
 
         // Get how much we'll move this frame.
-        float distanceToMove = movementSpeed * Time.deltaTime;
+        float distanceToMove = (CameraController.instance.IsPosOutOfBounds(transform.position, 1) ? 50 : movementSpeed) * Time.deltaTime;
         
         // If we are close to the target...
         if (distanceToMove >= transform.localPosition.magnitude)
