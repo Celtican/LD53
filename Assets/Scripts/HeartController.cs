@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ public class HeartController : MonoBehaviour
     [SerializeField] private Image[] heartImages;
     private int numHearts;
 
+    private bool damagedThisFrame = false;
+
     private void Awake()
     {
         instance = this;
@@ -19,10 +22,16 @@ public class HeartController : MonoBehaviour
         onLose.AddListener(() => PauseController.instance.Pause());
     }
 
+    private void Update()
+    {
+        damagedThisFrame = false;
+    }
+
     public void LoseHeart()
     {
-        if (!IsAlive()) return;
-        
+        if (!IsAlive() || damagedThisFrame) return;
+
+        damagedThisFrame = true;
         numHearts--;
         heartImages[numHearts].color = Color.clear;
         

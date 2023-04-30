@@ -40,7 +40,9 @@ public class EnemyController : MonoBehaviour
         // distance from its parent, the localPosition is therefor the distance (and direction) to the enemy's target.
 
         // Get how much we'll move this frame.
-        float distanceToMove = (CameraController.instance.IsPosOutOfBounds(transform.position, 1) ? 50 : movementSpeed) * Time.deltaTime;
+        float distanceToMove = (CameraController.instance.IsPosOutOfBounds(transform.position, 1)
+            ? 1
+            : movementSpeed * Time.deltaTime);
         
         // If we are close to the target...
         if (distanceToMove >= transform.localPosition.magnitude)

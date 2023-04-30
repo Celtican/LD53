@@ -18,12 +18,21 @@ public class TowerTooltipController : MonoBehaviour
 
     private void Update()
     {
-        Vector2 pos = new Vector2(Input.mousePosition.x / Screen.width, 
+        UpdatePosition();
+    }
+
+    private void UpdatePosition()
+    {
+        Vector2 pos = new Vector2(Input.mousePosition.x / Screen.width,
             Input.mousePosition.y / Screen.height);
         rectTransform.anchorMin = pos;
         rectTransform.anchorMax = pos;
 
-        rectTransform.pivot = pos.y < 0.5f ? Vector2.zero : Vector2.up;
+        Vector2 pivot = new Vector2();
+        pivot.y = pos.y < 0.25f ? 0 : 1;
+        pivot.x = pos.x < 0.75f ? 0 : 1;
+        rectTransform.pivot = pivot;
+        rectTransform.anchoredPosition = (pos.x < 0.75f ? Vector3.right : Vector3.left) * 50;
     }
 
     private void OnDestroy()
@@ -40,13 +49,12 @@ public class TowerTooltipController : MonoBehaviour
         tooltipText.text = tooltip;
         currentlyViewing = tower;
         gameObject.SetActive(true);
+        UpdatePosition();
     }
 
     public void StopViewing(Tower tower)
     {
-        print($"Attempting to stop viewing {tower.towerName}");
         if (currentlyViewing != tower) return;
-        print($"Stopping viewing {tower.towerName}");
         currentlyViewing = null;
         gameObject.SetActive(false);
     }

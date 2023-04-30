@@ -9,15 +9,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4700507428014727940, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: towerName
-      value: Transistor
+      value: LazyClone
       objectReference: {fileID: 0}
     - target: {fileID: -4700507428014727940, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: towerDescription
-      value: Crossing packets become bigger.
+      value: Crossing packets are duplicated. The duplicates become slower.
       objectReference: {fileID: 0}
     - target: {fileID: 828144633489455872, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: m_Name
-      value: BigTower
+      value: CopyAndRandomlyRotateTower
       objectReference: {fileID: 0}
     - target: {fileID: 828144633489455873, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: m_RootOrder
@@ -74,7 +74,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 828144633489455872, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
   m_PrefabInstance: {fileID: 4535818181584455690}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &473265371
+--- !u!114 &-5585966043480834322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,10 +83,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3858564201992778506}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c46730d48234f6fba8d5832e45689c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b27725f4b0a4be7a3b9463540ac5ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMultiplier: 1
+  speedMultiplier: 0.5
   damageMultiplier: 1
-  scaleAdder: 3
+  damageAdder: 0
+  scaleAdder: 0
   rotationInDegrees: 0

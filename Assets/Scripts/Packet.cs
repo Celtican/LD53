@@ -7,18 +7,30 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Packet : MonoBehaviour
 {
+    public GameObject prefab;
     [SerializeField] private GameObject enemyColliderObject;
     [SerializeField] private float initialSpeed = 5;
     public float damage = 1;
+    public float explosionSize = 0;
 
     [NonSerialized] public UnityEvent onDestroy = new UnityEvent();
     
     private Rigidbody2D body;
-    private readonly List<PacketModifier> collidedModifiers = new List<PacketModifier>();
+    private List<PacketModifier> collidedModifiers = new List<PacketModifier>();
+    private bool hasExploded = false;
 
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
+    }
+
+    public void CopyAttributes(Packet other)
+    {
+        body.velocity = other.body.velocity;
+        enemyColliderObject.transform.localScale = other.enemyColliderObject.transform.localScale;
+        damage = other.damage;
+        collidedModifiers = new List<PacketModifier>(other.collidedModifiers);
+        explosionSize = other.explosionSize;
     }
 
     private void Update()
@@ -34,6 +46,11 @@ public class Packet : MonoBehaviour
     {
         if (other.transform.parent != null && other.transform.parent.TryGetComponent(out EnemyController enemy))
         {
+            if (explosionSize > 0)
+            {
+                Explode(explosionSize);
+                return;
+            }
             enemy.TakeDamage(damage);
             onDestroy.Invoke();
             Destroy(gameObject);
@@ -75,5 +92,14 @@ public class Packet : MonoBehaviour
     public void Rotate(float radians)
     {
         body.velocity = Utils.Rotate(body.velocity, radians);
+    }
+
+    public void Explode(float explosionSize)
+    {
+        if (hasExploded) return;
+        hasExploded = true;
+        ExplosionFactory.instance.CreateExplosion(transform.position, explosionSize, damage);
+        onDestroy.Invoke();
+        Destroy(gameObject);
     }
 }

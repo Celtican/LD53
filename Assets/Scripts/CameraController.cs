@@ -9,7 +9,11 @@ public class CameraController : MonoBehaviour
     public float minimumX = 7;
     public float minimumY = 5;
     public float horizontalMovementStep = 3;
+    public float timeBetweenMoves = 2;
+    public float initialHorizontalOffset = 10;
+    public float timeForInitialMove = 5;
     public RectTransform hud;
+    public LayerMask eventMask;
     
     private Camera mainCamera;
     private Canvas canvas;
@@ -25,7 +29,9 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        xPos = mainCamera.transform.position.x;
+        xPos = mainCamera.transform.position.x - initialHorizontalOffset;
+        mainCamera.eventMask = eventMask;
+        MoveHorizontally(initialHorizontalOffset, timeForInitialMove);
     }
 
     private void OnDrawGizmos()
@@ -45,11 +51,12 @@ public class CameraController : MonoBehaviour
 
     public void MoveHorizontally()
     {
-        MoveHorizontally(horizontalMovementStep);
+        MoveHorizontally(horizontalMovementStep, timeBetweenMoves);
     }
-    public void MoveHorizontally(float amount)
+
+    private void MoveHorizontally(float amount, float time)
     {
-        DOTween.To(() => xPos, newPos => xPos = newPos, xPos + amount, 2);
+        DOTween.To(() => xPos, newPos => xPos = newPos, xPos + amount, time);
     }
 
     public bool IsPosOutOfBounds(Vector2 pos)

@@ -16,7 +16,6 @@ public class Tower : MonoBehaviour
 
     private void OnMouseExit()
     {
-        print($"Mouse exiting {towerName}");
         TowerTooltipController.instance.StopViewing(this);
     }
 

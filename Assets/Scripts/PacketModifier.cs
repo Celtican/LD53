@@ -11,6 +11,13 @@ public abstract class PacketModifier : MonoBehaviour
         }
     }
 
+    protected Packet ClonePacket(Packet packet)
+    {
+        Packet newPacket = Instantiate(packet.prefab).GetComponent<Packet>();
+        newPacket.CopyAttributes(packet);
+        return newPacket;
+    }
+
     protected virtual void Modify(Packet packet)
     {
         Debug.LogWarning("PacketModifier.Modify was not overriden!");

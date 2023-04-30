@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &246549358601835497
+--- !u!1001 &4535818181584455690
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,19 +9,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4700507428014727940, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: towerName
-      value: Ping
-      objectReference: {fileID: 0}
-    - target: {fileID: -4700507428014727940, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
-      propertyPath: towerType
-      value: 0
+      value: PrimeDetonate
       objectReference: {fileID: 0}
     - target: {fileID: -4700507428014727940, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: towerDescription
-      value: Send a packet projectile leftbound.
+      value: Crossing packets explode when they touch an enemy.
       objectReference: {fileID: 0}
     - target: {fileID: 828144633489455872, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: m_Name
-      value: ProducerTower
+      value: ExplosionTower
       objectReference: {fileID: 0}
     - target: {fileID: 828144633489455873, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: m_RootOrder
@@ -29,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 828144633489455873, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 828144633489455873, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -67,25 +63,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 828144634334409022, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ab552e85beddaa4a96ff640c2e2a63e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
---- !u!1 &582585572545587433 stripped
+--- !u!1 &3858564201992778506 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 828144633489455872, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
-  m_PrefabInstance: {fileID: 246549358601835497}
+  m_PrefabInstance: {fileID: 4535818181584455690}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3588479258059643131
+--- !u!114 &473265371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582585572545587433}
+  m_GameObject: {fileID: 3858564201992778506}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41a120f086be4b9ab7e6c4c6cffd4ead, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c46730d48234f6fba8d5832e45689c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenSpawns: 1
-  direction: {x: -1, y: 0}
-  packetPrefab: {fileID: 7212486580831903514, guid: 0f0037eccc49f674bb0bbb3fc189c390, type: 3}
+  speedMultiplier: 1
+  damageMultiplier: 1
+  damageAdder: 0
+  scaleAdder: 0
+  rotationInDegrees: 0
+  newExplosionSize: 2

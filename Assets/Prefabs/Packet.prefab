@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff030cacc0d945249c012b0ca50be6e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefab: {fileID: 7212486580831903514}
   enemyColliderObject: {fileID: 6582857326240964137}
   initialSpeed: 5
   damage: 1
