@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class WaveController : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class WaveController : MonoBehaviour
     public UnityEvent onEndWave;
     public StatusDisplay waveStatus;
 
+    public string sceneOnWin;
+
     private Wave currentWave = null;
     
     private float timeSinceLastSpawn = 0f;
@@ -19,6 +22,8 @@ public class WaveController : MonoBehaviour
     private int numEnemiesAlive;
     private int numMaxWaves;
     private int numCurrentWave;
+
+    private bool gameOver;
 
     private void Awake()
     {
@@ -60,6 +65,15 @@ public class WaveController : MonoBehaviour
     {
         if (!firstWave)
         {
+            if (waves.Count == 0)
+            {
+                if (!gameOver)
+                {
+                    gameOver = true;
+                    Timer.Register(5, () => SceneManager.LoadScene(sceneOnWin));
+                }
+                return;
+            }
             waves.RemoveAt(0);
             onEndWave.Invoke();
         }

@@ -50,8 +50,15 @@ public class Packet : MonoBehaviour
                 Explode(explosionSize);
                 return;
             }
-            enemy.TakeDamage(damage);
-            Destroy(gameObject);
+
+            float damageToDeal = damage;
+            damage -= enemy.health;
+            enemy.TakeDamage(damageToDeal);
+            if (damage <= 0)
+            {
+                print("Destroying packet");
+                Destroy(gameObject);
+            }
         }
     }
 

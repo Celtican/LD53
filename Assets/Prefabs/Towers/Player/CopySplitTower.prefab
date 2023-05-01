@@ -9,15 +9,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4700507428014727940, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: towerName
-      value: PrimeDetonate
+      value: Split
       objectReference: {fileID: 0}
     - target: {fileID: -4700507428014727940, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: towerDescription
-      value: Crossing packets explode when they touch an enemy.
+      value: Crossing packets are duplicated. One packet rotates clockwise, the other
+        rotates counterclockwise.
       objectReference: {fileID: 0}
     - target: {fileID: 828144633489455872, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: m_Name
-      value: ExplosionTower
+      value: CopySplitTower
       objectReference: {fileID: 0}
     - target: {fileID: 828144633489455873, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: m_RootOrder
@@ -74,7 +75,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 828144633489455872, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
   m_PrefabInstance: {fileID: 4535818181584455690}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &473265371
+--- !u!114 &4541283546548864464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,12 +84,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3858564201992778506}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c46730d48234f6fba8d5832e45689c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 435d64fb22fa4f5082db7e5875c2f0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMultiplier: 1
-  damageMultiplier: 1
-  damageAdder: 0
-  scaleAdder: 0
-  rotationInDegrees: 0
-  newExplosionSize: 2

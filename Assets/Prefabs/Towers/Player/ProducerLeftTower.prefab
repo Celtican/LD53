@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -4700507428014727940, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
+      propertyPath: rarity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4700507428014727940, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: towerName
       value: Ping
       objectReference: {fileID: 0}
@@ -90,3 +94,4 @@ MonoBehaviour:
   timeOffset: 0
   direction: {x: -1, y: 0}
   packetPrefab: {fileID: 7212486580831903514, guid: 0f0037eccc49f674bb0bbb3fc189c390, type: 3}
+  rotationAfterShootingInDegrees: 0
