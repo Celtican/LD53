@@ -11,6 +11,8 @@ public class TowerGenerationController : MonoBehaviour
     public float timeBetweenStocks = 3;
     public int numButtons = 3;
 
+    public StatusDisplay statusDisplay;
+
     public GameObject[] towerPrefabs;
 
     private int stock;
@@ -18,12 +20,14 @@ public class TowerGenerationController : MonoBehaviour
 
     public void Update()
     {
-        timeUntilNextStock -= Time.deltaTime;
+        if (stock < maxStock) timeUntilNextStock -= Time.deltaTime;
         if (timeUntilNextStock <= 0)
         {
             timeUntilNextStock += timeBetweenStocks;
             AddStock();
         }
+        
+        statusDisplay.SetStatus($"{stock}/{maxStock} Stock", -(timeUntilNextStock / timeBetweenStocks-1));
     }
 
     public void AddStock()

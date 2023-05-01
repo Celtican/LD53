@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyController : MonoBehaviour
 {
@@ -18,6 +20,8 @@ public class EnemyController : MonoBehaviour
 
     // This is a reference to the audio source attached to this game object.
     private AudioSource audioSource;
+
+    public UnityEvent onDie = new UnityEvent();
 
     // Start is called before the first frame update
     private void Start()
@@ -125,5 +129,10 @@ public class EnemyController : MonoBehaviour
                 audioSource.PlayOneShot(soundOnDamage);
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        onDie.Invoke();
     }
 }

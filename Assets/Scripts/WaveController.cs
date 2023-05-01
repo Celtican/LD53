@@ -6,56 +6,85 @@ using UnityEngine.Events;
 
 public class WaveController : MonoBehaviour
 {
-    [Tooltip("The list of waves that are spawned in this level.")]
-    public List<Wave> waves;
+    public static WaveController instance; 
 
+    public List<Wave> waves;
     public UnityEvent onEndWave;
+    public StatusDisplay waveStatus;
+
+    private Wave currentWave = null;
     
     private float timeSinceLastSpawn = 0f;
+    private int numSpawnedEnemiesThisWave;
+    private int numEnemiesAlive;
+    private int numMaxWaves;
+    private int numCurrentWave;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
         onEndWave.AddListener(() => CameraController.instance.MoveHorizontally());
+        numMaxWaves = waves.Count;
+        StartWave(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        // If we don't have any waves left, exit this function (don't do anything).
-        if (waves.Count == 0)
-        {
-            return;
-        }
+        waveStatus.SetStatus($"Wave {numCurrentWave}/{numMaxWaves}",
+            -((currentWave == null ? 1 : (float)numEnemiesAlive / currentWave.numEnemiesToSpawn)-1));
         
-        // Add how much time has passed since last frame.
-        timeSinceLastSpawn += Time.deltaTime;
+        if (currentWave == null) return;
 
-        // Get the current wave. We'll reference this a bunch later.
-        Wave currentWave = waves[0];
-        // If we have enemies to spawn...
-        if (currentWave.numEnemiesToSpawn > 0)
+        timeSinceLastSpawn += Time.deltaTime;
+        if (timeSinceLastSpawn >= currentWave.timeBetweenSpawns) SpawnEnemy();
+
+        if (numEnemiesAlive == 0) StartWave(false);
+    }
+
+    private void SpawnEnemy()
+    {
+        if (numSpawnedEnemiesThisWave >= currentWave.numEnemiesToSpawn) return;
+        
+        EnemyController enemy = Instantiate(currentWave.enemyPrefab, transform.localPosition, Quaternion.identity, transform).GetComponent<EnemyController>();
+        enemy.onDie.AddListener(() => numEnemiesAlive--);
+        
+        timeSinceLastSpawn -= currentWave.timeBetweenSpawns;
+        numSpawnedEnemiesThisWave++;
+    }
+
+    private void StartWave(bool firstWave)
+    {
+        if (!firstWave)
         {
-            // ... and if enough time has passed that we should spawn an enemy...
-            if (timeSinceLastSpawn > currentWave.timeBetweenSpawns)
-            {
-                // ... spawn the enemy!
-                currentWave.numEnemiesToSpawn -= 1;
-                Instantiate(currentWave.enemyPrefab, transform.localPosition, Quaternion.identity, transform);
-                
-                // And reset the time since last spawn to 0.
-                timeSinceLastSpawn = 0;
-            }
-        }
-        else if (timeSinceLastSpawn >= currentWave.timeAfterWave)
-        {
-            // If we don't have any enemies to spawn, and we've waited enough time, clear the current wave.
             waves.RemoveAt(0);
-            
             onEndWave.Invoke();
-            
-            // And reset the time since last spawn.
-            timeSinceLastSpawn = 0;
         }
+
+        if (waves.Count == 0) return;
+        
+        numCurrentWave++;
+        RestartWave(firstWave);
+    }
+
+    public void RestartWave(bool firstWave)
+    {
+        float time = firstWave
+            ? CameraController.instance.timeForInitialMove
+            : CameraController.instance.timeBetweenMoves + (currentWave == null ? 0 : currentWave.timeAfterWave);
+
+        currentWave = null;
+
+        Timer.Register(time, () =>
+        {
+            currentWave = waves[0];
+            timeSinceLastSpawn = 0;
+            numSpawnedEnemiesThisWave = 0;
+            numEnemiesAlive = currentWave.numEnemiesToSpawn;
+        });
     }
 
     [Serializable]

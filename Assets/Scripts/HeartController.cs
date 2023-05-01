@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -9,6 +10,8 @@ public class HeartController : MonoBehaviour
     public static HeartController instance;
 
     public UnityEvent onLose;
+
+    public Image hurtTexture;
     
     [SerializeField] private Image[] heartImages;
     private int numHearts;
@@ -34,9 +37,16 @@ public class HeartController : MonoBehaviour
         damagedThisFrame = true;
         numHearts--;
         heartImages[numHearts].color = Color.clear;
+
+        hurtTexture.color = Color.white;
+        hurtTexture.DOFade(0, 2).SetUpdate(true);
         
         if (!IsAlive()) onLose.Invoke();
-        else DestroyAllEnemies();
+        else
+        {
+            DestroyAllEnemies();
+            WaveController.instance.RestartWave(false);
+        }
     }
 
     private void DestroyAllEnemies()

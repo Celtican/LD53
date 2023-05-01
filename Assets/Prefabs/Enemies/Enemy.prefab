@@ -151,6 +151,9 @@ MonoBehaviour:
   health: 1
   soundOnDamage: {fileID: 0}
   soundOnDeath: {fileID: 0}
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &-3095334941531308373
 Rigidbody2D:
   serializedVersion: 4
