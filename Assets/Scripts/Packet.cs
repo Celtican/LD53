@@ -37,7 +37,6 @@ public class Packet : MonoBehaviour
     {
         if (CameraController.instance.IsPosOutOfBounds(transform.position))
         {
-            onDestroy.Invoke();
             Destroy(gameObject);
         }
     }
@@ -52,7 +51,6 @@ public class Packet : MonoBehaviour
                 return;
             }
             enemy.TakeDamage(damage);
-            onDestroy.Invoke();
             Destroy(gameObject);
         }
     }
@@ -99,7 +97,11 @@ public class Packet : MonoBehaviour
         if (hasExploded) return;
         hasExploded = true;
         ExplosionFactory.instance.CreateExplosion(transform.position, explosionSize, damage);
-        onDestroy.Invoke();
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        onDestroy.Invoke();
     }
 }

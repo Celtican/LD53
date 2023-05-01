@@ -42,7 +42,8 @@ public class TowerTooltipController : MonoBehaviour
 
     public void View(Tower tower)
     {
-        string tooltip = $"><color=#00ff00> {tower.towerName}</color>.breach\n" +
+        string extension = tower.rarity == Tower.Rarity.Corporate ? ".protocol" : ".breach";
+        string tooltip = $"><color=#00ff00> {tower.towerName}</color>{extension}\n" +
                          $"<color=#90ff90>// {tower.rarity} {tower.towerType}</color>\n" +
                          $"{tower.towerDescription}";
 

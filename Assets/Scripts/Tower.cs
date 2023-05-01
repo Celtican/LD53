@@ -42,6 +42,8 @@ public class Tower : MonoBehaviour
                 return "Rare";
             case Rarity.Legendary:
                 return "Legendary";
+            case Rarity.Corporate:
+                return "Corporate";
             default:
                 throw new ArgumentOutOfRangeException();
         }
@@ -57,6 +59,7 @@ public class Tower : MonoBehaviour
     {
         Common,
         Rare,
-        Legendary
+        Legendary,
+        Corporate
     }
 }
