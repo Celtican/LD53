@@ -1,4 +1,5 @@
 ﻿using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -44,7 +45,8 @@ public class EnemyController : MonoBehaviour
         // distance from its parent, the localPosition is therefor the distance (and direction) to the enemy's target.
 
         // Get how much we'll move this frame.
-        float distanceToMove = (CameraController.instance.IsPosOutOfBounds(transform.position, 1)
+        bool isPosOutOfBounds = CameraController.instance.IsPosOutOfBounds(transform.position, 1);
+        float distanceToMove = (isPosOutOfBounds
             ? 1
             : movementSpeed * Time.deltaTime);
         
@@ -65,7 +67,15 @@ public class EnemyController : MonoBehaviour
                 // And then rotate towards the new target.
                 float angle = Vector3.SignedAngle(transform.up, transform.position - transform.parent.position,
                     transform.forward) - 90;
-                transform.Rotate(0, 0, angle);
+                // if (isPosOutOfBounds)
+                // {
+                    transform.Rotate(0, 0, angle);
+                // }
+                // else
+                // {
+                //     Tween tween = transform.DORotate(new Vector3(0, 0, angle + transform.rotation.z), 1/(movementSpeed*2));
+                //     onDie.AddListener(() => tween.Kill());
+                // }
             }
             
             // And then exit the function (do nothing else).

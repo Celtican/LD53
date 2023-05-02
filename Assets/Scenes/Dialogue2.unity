@@ -432,17 +432,19 @@ MonoBehaviour:
   dialogueText: {fileID: 397253335}
   playerTypingText: {fileID: 162880928}
   instructionText: {fileID: 1598304893}
+  nextScreen: Level2
   story:
-  - text: Volatile binary [/server/company/employees/69819435602395/%player%.account] accessed.
+  - text: Volatile binary [/server/company/employees/69819435602395/%player%.account]
+      accessed.
     character: 1
     customTime: 0
   - text: 'Begin output:'
     character: 1
     customTime: 0
-  - text: - NetShield Employee Summary
+  - text: '- NetShield Employee Summary'
     character: 1
     customTime: 0
-  - text: - RESTRICTED ACCESS
+  - text: '- RESTRICTED ACCESS'
     character: 1
     customTime: 0
   - text: '- First Name: [REDACTED]'
@@ -475,7 +477,10 @@ MonoBehaviour:
   - text: '- Payout: N/A'
     character: 1
     customTime: 0
-  - text: "- Administrator Note: %player% has been recruited to increase NetShield's capacity for fully protected systems. They are working full-force on Project Scylla. He/she is not to be communicated with by any means, for any reason, except by administrators."
+  - text: '- Administrator Note: %player% has been recruited to increase NetShield''s
+      capacity for fully protected systems. They are working full-force on Project
+      Scylla. He/she is not to be communicated with by any means, for any reason,
+      except by administrators.'
     character: 1
     customTime: 0
   - text: '- Project: Project Scylla'
@@ -538,13 +543,16 @@ MonoBehaviour:
   - text: welcome back to hackRALLY!
     character: 1
     customTime: 0
-  - text: ┬ ┬┌─┐┌─┐┬┌─╦═╗╔═╗╦  ╦ ╦ ╦
+  - text: "\u252C \u252C\u250C\u2500\u2510\u250C\u2500\u2510\u252C\u250C\u2500\u2566\u2550\u2557\u2554\u2550\u2557\u2566 
+      \u2566 \u2566 \u2566"
     character: 1
     customTime: 0
-  - text: ├─┤├─┤│  ├┴┐╠╦╝╠═╣║  ║ ╚╦╝
+  - text: "\u251C\u2500\u2524\u251C\u2500\u2524\u2502  \u251C\u2534\u2510\u2560\u2566\u255D\u2560\u2550\u2563\u2551 
+      \u2551 \u255A\u2566\u255D"
     character: 1
     customTime: 0
-  - text: ┴ ┴┴ ┴└─┘┴ ┴╩╚═╩ ╩╩═╝╩═╝╩ 
+  - text: "\u2534 \u2534\u2534 \u2534\u2514\u2500\u2518\u2534 \u2534\u2569\u255A\u2550\u2569
+      \u2569\u2569\u2550\u255D\u2569\u2550\u255D\u2569"
     character: 1
     customTime: 0
   - text: (NO SCRIPT KIDDIES ALLOWED)
@@ -553,7 +561,7 @@ MonoBehaviour:
   - text: Auto-Login successful!
     character: 1
     customTime: 0
-  - text: %player% connected to the server. Welcome, @%player%!
+  - text: '%player% connected to the server. Welcome, @%player%!'
     character: 1
     customTime: 0
   - text: palette > how did it go?
@@ -562,25 +570,30 @@ MonoBehaviour:
   - text: Rule17 > wb
     character: 0
     customTime: 0
-  - text: This is crazy. I'm starting to remember, a little bit. They... hired me... to work on "Project Scylla," whatever that is.
+  - text: This is crazy. I'm starting to remember, a little bit. They... hired me...
+      to work on "Project Scylla," whatever that is.
     character: 2
     customTime: 0
   - text: Wyvernius > project scylla???
     character: 0
     customTime: 0
-  - text: palette > youre in a bigger rabbit hole than i thought, %player%. "Project Scylla" is their dream project that theyve been trying to get up and running. i have no idea what it is though
+  - text: palette > youre in a bigger rabbit hole than i thought, %player%. "Project
+      Scylla" is their dream project that theyve been trying to get up and running.
+      i have no idea what it is though
     character: 0
     customTime: 0
   - text: palette > did you find anything else?
     character: 0
     customTime: 0
-  - text: I found another IP address. I'm going to follow it. 
+  - text: I found another IP address. I'm going to follow it.
     character: 2
     customTime: 0
   - text: rust_ftw disconnected
     character: 1
     customTime: 0
-  - text: palette > be careful. their servers have been zapping us like flies. rumor has it that they have a server code-named "RED" that literally attempts to kill anyone that connects.
+  - text: palette > be careful. their servers have been zapping us like flies. rumor
+      has it that they have a server code-named "RED" that literally attempts to
+      kill anyone that connects.
     character: 0
     customTime: 0
   - text: I'll keep an eye out.
@@ -604,13 +617,16 @@ MonoBehaviour:
   - text: .
     character: 1
     customTime: 0
-  - text: 'Tracemaster server detected. Legislation [CSecurity01:740] is in effect. Are you sure you want to continue? [y/n]'
+  - text: Tracemaster server detected. Legislation [CSecurity01:740] is in effect.
+      Are you sure you want to continue? [y/n]
     character: 1
     customTime: 0
   - text: y
     character: 2
     customTime: 0
-  - text: 'Anomaly detected. Server may be potentially harmful to all accessors. Legislations [CSecurity01:740] and [CSecurity01:746] are in effect. Are you sure you want to continue? [y/n]'
+  - text: Anomaly detected. Server may be potentially harmful to all accessors. Legislations
+      [CSecurity01:740] and [CSecurity01:746] are in effect. Are you sure you want
+      to continue? [y/n]
     character: 1
     customTime: 0
   - text: y

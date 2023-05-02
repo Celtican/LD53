@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4700507428014727940, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: towerName
-      value: Amplify
+      value: Fatale
       objectReference: {fileID: 0}
     - target: {fileID: -4700507428014727940, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: towerDescription
@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 828144634334409022, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6ab552e85beddaa4a96ff640c2e2a63e, type: 3}
+      objectReference: {fileID: 21300000, guid: b70d04d332e7cdf4ca990780bc70c0fc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb239765959a13a4a9579b945cb14c0e, type: 3}
 --- !u!1 &3858564201992778506 stripped
@@ -95,3 +95,4 @@ MonoBehaviour:
   damageAdder: 0
   scaleAdder: 0
   rotationInDegrees: 0
+  newExplosionSize: 0

@@ -24,6 +24,7 @@ public class WaveController : MonoBehaviour
     private int numCurrentWave;
 
     private bool gameOver;
+    private bool gameStarted = false;
 
     private void Awake()
     {
@@ -34,7 +35,6 @@ public class WaveController : MonoBehaviour
     {
         onEndWave.AddListener(() => CameraController.instance.MoveHorizontally());
         numMaxWaves = waves.Count;
-        StartWave(true);
     }
 
     private void Update()
@@ -50,6 +50,13 @@ public class WaveController : MonoBehaviour
         if (numEnemiesAlive == 0) StartWave(false);
     }
 
+    public void StartGame()
+    {
+        if (gameStarted) return;
+        gameStarted = true;
+        StartWave(true);
+    }
+
     private void SpawnEnemy()
     {
         if (numSpawnedEnemiesThisWave >= currentWave.numEnemiesToSpawn) return;
@@ -61,7 +68,7 @@ public class WaveController : MonoBehaviour
         numSpawnedEnemiesThisWave++;
     }
 
-    private void StartWave(bool firstWave)
+    public void StartWave(bool firstWave)
     {
         if (!firstWave)
         {
@@ -86,9 +93,7 @@ public class WaveController : MonoBehaviour
 
     public void RestartWave(bool firstWave)
     {
-        float time = firstWave
-            ? CameraController.instance.timeForInitialMove
-            : CameraController.instance.timeBetweenMoves + (currentWave == null ? 0 : currentWave.timeAfterWave);
+        float time = CameraController.instance.timeBetweenMoves + (currentWave == null ? 0 : currentWave.timeAfterWave);
 
         currentWave = null;
 

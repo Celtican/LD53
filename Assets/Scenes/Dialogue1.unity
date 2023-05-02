@@ -432,8 +432,9 @@ MonoBehaviour:
   dialogueText: {fileID: 397253335}
   playerTypingText: {fileID: 162880928}
   instructionText: {fileID: 1598304893}
+  nextScreen: Level1
   story:
-  - text: 'packet.Breach()'
+  - text: packet.Breach()
     character: 1
     customTime: 0
   - text: A game created in 72 hours for Ludum Dare 53
@@ -496,7 +497,7 @@ MonoBehaviour:
   - text: Insert Username
     character: 1
     customTime: 0
-  - text: ""
+  - text: 
     character: 3
     customTime: 0
   - text: Insert Password
@@ -596,8 +597,8 @@ MonoBehaviour:
   - text: rust_ftw > "contract work" lolololol
     character: 0
     customTime: 0
-  - text: Wait, what year is it? The server says it's %futureyear%. Shouldn't that be %year%?
-      Is the server ahead or something?
+  - text: Wait, what year is it? The server says it's %futureyear%. Shouldn't that
+      be %year%? Is the server ahead or something?
     character: 2
     customTime: 0
   - text: palette > holy fuck you dont remember a single thing that happend this
@@ -636,8 +637,8 @@ MonoBehaviour:
       i cant believe youre actually connected with them
     character: 0
     customTime: 0
-  - text: palette > %player%. heres what you need to do. 250.120.203.116. thats
-      a loose server of theirs that I found recently. youre a 10x better hacker than
+  - text: palette > %player%. heres what you need to do. 250.120.203.116. thats a
+      loose server of theirs that I found recently. youre a 10x better hacker than
       me, you have to breach it and figure out what theyve been up to. what YOUVE
       been up to
     character: 0

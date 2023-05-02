@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
     public float timeBetweenMoves = 2;
     public float initialHorizontalOffset = 10;
     public float timeForInitialMove = 5;
+    public float timeToWaitForFirstMove = 2;
     public RectTransform hud;
     public LayerMask eventMask;
     
@@ -31,7 +32,7 @@ public class CameraController : MonoBehaviour
     {
         xPos = mainCamera.transform.position.x - initialHorizontalOffset;
         mainCamera.eventMask = eventMask;
-        MoveHorizontally(initialHorizontalOffset, timeForInitialMove);
+        Timer.Register(timeToWaitForFirstMove, () => MoveHorizontally(initialHorizontalOffset, timeForInitialMove));
     }
 
     private void OnDrawGizmos()

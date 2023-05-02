@@ -79,6 +79,7 @@ public class TowerPlacementButton : MonoBehaviour, IPointerEnterHandler, IPointe
         if (CameraController.instance.IsPosOutOfBounds(worldPos) ||
             TowerController.instance.IsTowerPlacedAtWorldPosition(worldPos))
             return;
+        WaveController.instance.StartGame();
         TowerController.instance.PlaceTowerAtWorldPosition(towerPrefab, worldPos);
         onPlace.Invoke();
     }

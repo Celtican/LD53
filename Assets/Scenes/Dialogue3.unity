@@ -432,221 +432,235 @@ MonoBehaviour:
   dialogueText: {fileID: 397253335}
   playerTypingText: {fileID: 162880928}
   instructionText: {fileID: 1598304893}
+  nextScreen: Level3
   story:
-  - text: "Volatile binary [/server/log/23656234698.log] accessed."
+  - text: Volatile binary [/server/log/23656234698.log] accessed.
     character: 1
     customTime: 0
-  - text: "Begin output:"
+  - text: 'Begin output:'
     character: 1
     customTime: 0
-  - text: "- OpheliaR started a chat with DrEdmundP"
+  - text: '- OpheliaR started a chat with DrEdmundP'
     character: 1
     customTime: 0
-  - text: "- DrEdmundP > What's this about? It's rare for you to contact me."
+  - text: '- DrEdmundP > What''s this about? It''s rare for you to contact me.'
     character: 1
     customTime: 0
-  - text: "- OpheliaR > This time is different. Do you remember our particularly important employee? They aren't cooperating anymore. I, we, NetShield, needs them to cooperate for Project Scylla to be a success."
+  - text: '- OpheliaR > This time is different. Do you remember our particularly
+      important employee? They aren''t cooperating anymore. I, we, NetShield, needs
+      them to cooperate for Project Scylla to be a success.'
     character: 1
     customTime: 0
-  - text: "- DrEdmundP > That's unfortunate. I assume you didn't send this message to vent, did you?"
+  - text: '- DrEdmundP > That''s unfortunate. I assume you didn''t send this message
+      to vent, did you?'
     character: 1
     customTime: 0
-  - text: "- OpheliaR > I need you to do something for me. Wipe everything from the last year."
+  - text: '- OpheliaR > I need you to do something for me. Wipe everything from the
+      last year.'
     character: 1
     customTime: 0
-  - text: "- DrEdmundP > You'll have to be more specific than that."
+  - text: '- DrEdmundP > You''ll have to be more specific than that.'
     character: 1
     customTime: 0
-  - text: "- OpheliaR > Their memories. I know you can do it, I've seen you do it. You did it to yourself, even."
+  - text: '- OpheliaR > Their memories. I know you can do it, I''ve seen you do it.
+      You did it to yourself, even.'
     character: 1
     customTime: 0
-  - text: "- DrEdmundP > I haven't done that in years. Even if I could pull it off, that would reduce their cooperation even more, and we'd have to start all over again. What's the idea?"
+  - text: '- DrEdmundP > I haven''t done that in years. Even if I could pull it off,
+      that would reduce their cooperation even more, and we''d have to start all
+      over again. What''s the idea?'
     character: 1
     customTime: 0
-  - text: "- OpheliaR > Actually that's exactly the intention. They aren't sharing any more information about their dark web server. If we cut off the leash, where does the dog go to? Back home."
+  - text: '- OpheliaR > Actually that''s exactly the intention. They aren''t sharing
+      any more information about their dark web server. If we cut off the leash,
+      where does the dog go to? Back home.'
     character: 1
     customTime: 0
-  - text: "- DrEdmundP > ... I see. I suppose this is where RED comes in?"
+  - text: '- DrEdmundP > ... I see. I suppose this is where RED comes in?'
     character: 1
     customTime: 0
-  - text: "- OpheliaR > Exactly."
+  - text: '- OpheliaR > Exactly.'
     character: 1
     customTime: 0
-  - text: "connect 118.99.246.120"
+  - text: connect 118.99.246.120
     character: 2
     customTime: 0
-  - text: "Connecting to 118.99.246.120..."
+  - text: Connecting to 118.99.246.120...
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "Connection failed."
+  - text: Connection failed.
     character: 1
     customTime: 0
-  - text: "Connecting to 118.99.246.120 (attempt 2/10)..."
+  - text: Connecting to 118.99.246.120 (attempt 2/10)...
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "Connection failed."
+  - text: Connection failed.
     character: 1
     customTime: 0
-  - text: "Connecting to 118.99.246.120 (attempt 3/10)..."
+  - text: Connecting to 118.99.246.120 (attempt 3/10)...
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "Connection failed."
+  - text: Connection failed.
     character: 1
     customTime: 0
-  - text: "Connecting to 118.99.246.120 (attempt 4/10)..."
+  - text: Connecting to 118.99.246.120 (attempt 4/10)...
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "Connection failed."
+  - text: Connection failed.
     character: 1
     customTime: 0
-  - text: "Connecting to 118.99.246.120 (attempt 5/10)..."
+  - text: Connecting to 118.99.246.120 (attempt 5/10)...
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "Connection failed."
+  - text: Connection failed.
     character: 1
     customTime: 0
-  - text: "Connecting to 118.99.246.120 (attempt 6/10)..."
+  - text: Connecting to 118.99.246.120 (attempt 6/10)...
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "Success!"
+  - text: Success!
     character: 1
     customTime: 0
-  - text: "Begin server message:"
+  - text: 'Begin server message:'
     character: 1
     customTime: 0
-  - text: "welcome back to hackRALLY!"
+  - text: welcome back to hackRALLY!
     character: 1
     customTime: 0
-  - text: "┬ ┬┌─┐┌─┐┬┌─╦═╗╔═╗╦  ╦ ╦ ╦"
+  - text: "\u252C \u252C\u250C\u2500\u2510\u250C\u2500\u2510\u252C\u250C\u2500\u2566\u2550\u2557\u2554\u2550\u2557\u2566 
+      \u2566 \u2566 \u2566"
     character: 1
     customTime: 0
-  - text: "├─┤├─┤│  ├┴┐╠╦╝╠═╣║  ║ ╚╦╝"
+  - text: "\u251C\u2500\u2524\u251C\u2500\u2524\u2502  \u251C\u2534\u2510\u2560\u2566\u255D\u2560\u2550\u2563\u2551 
+      \u2551 \u255A\u2566\u255D"
     character: 1
     customTime: 0
-  - text: "┴ ┴┴ ┴└─┘┴ ┴╩╚═╩ ╩╩═╝╩═╝╩ "
+  - text: "\u2534 \u2534\u2534 \u2534\u2514\u2500\u2518\u2534 \u2534\u2569\u255A\u2550\u2569
+      \u2569\u2569\u2550\u255D\u2569\u2550\u255D\u2569 "
     character: 1
     customTime: 0
-  - text: "(NO SCRIPT KIDDIES ALLOWED)"
+  - text: (NO SCRIPT KIDDIES ALLOWED)
     character: 1
     customTime: 0
-  - text: "Auto-Login successful!"
+  - text: Auto-Login successful!
     character: 1
     customTime: 0
-  - text: "%player% connected to the server. Welcome, @%player%!"
+  - text: '%player% connected to the server. Welcome, @%player%!'
     character: 1
     customTime: 0
-  - text: "Wyvernius disconnected"
+  - text: Wyvernius disconnected
     character: 1
     customTime: 0
-  - text: "pOmOgRaNaTe disconnected"
+  - text: pOmOgRaNaTe disconnected
     character: 1
     customTime: 0
-  - text: "Nemo disconnected"
+  - text: Nemo disconnected
     character: 1
     customTime: 0
-  - text: "IbisAltAccount disconnected"
+  - text: IbisAltAccount disconnected
     character: 1
     customTime: 0
-  - text: "toouche connected to the server. Welcome, @toouche!"
+  - text: toouche connected to the server. Welcome, @toouche!
     character: 1
     customTime: 0
-  - text: "toouche disconnected"
+  - text: toouche disconnected
     character: 1
     customTime: 0
-  - text: "PR0PH3CY disconnected"
+  - text: PR0PH3CY disconnected
     character: 1
     customTime: 0
-  - text: "palette > @%player%..."
+  - text: palette > @%player%...
     character: 0
     customTime: 0
-  - text: "palette > ... what happened...?"
+  - text: palette > ... what happened...?
     character: 0
     customTime: 0
-  - text: "I'm so sorry. I... led them right to you. I didn't mean to."
+  - text: I'm so sorry. I... led them right to you. I didn't mean to.
     character: 2
     customTime: 0
-  - text: "palette > RED's IP address is 48.127.192.107. shut them the fuck down."
+  - text: palette > RED's IP address is 48.127.192.107. shut them the fuck down.
     character: 0
     customTime: 0
-  - text: "palette > theyr hre"
+  - text: palette > theyr hre
     character: 0
     customTime: 0
-  - text: "palette disconnected"
+  - text: palette disconnected
     character: 1
     customTime: 0
-  - text: "connect 48.127.192.107"
+  - text: connect 48.127.192.107
     character: 2
     customTime: 0
-  - text: "Connecting to 48.127.192.107..."
+  - text: Connecting to 48.127.192.107...
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "."
+  - text: .
     character: 1
     customTime: 0
-  - text: "[WARNING] UNSTABLE AI DETECTED. NO LEGISLATIONS ARE IN EFFECT. DO NOT CONTINUE."
+  - text: '[WARNING] UNSTABLE AI DETECTED. NO LEGISLATIONS ARE IN EFFECT. DO NOT
+      CONTINUE.'
     character: 1
     customTime: 0
-  - text: "y"
+  - text: y
     character: 2
     customTime: 0
   curDialogue: 0

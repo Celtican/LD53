@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Text.RegularExpressions;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
@@ -15,6 +14,8 @@ public class DialogueController : MonoBehaviour
     public TMP_Text dialogueText;
     public TMP_Text playerTypingText;
     public TMP_Text instructionText;
+
+    public string nextScreen;
     
     [FormerlySerializedAs("dialogue")] public List<Dialogue> story;
     public int curDialogue = 0;
@@ -102,7 +103,11 @@ public class DialogueController : MonoBehaviour
 
     public void NextDialogue()
     {
-        if (curDialogue >= story.Count) return;
+        if (curDialogue >= story.Count)
+        {
+            if (nextScreen.Length > 0) SceneManager.LoadScene(nextScreen);
+            return;
+        }
 
         Dialogue dialogue = story[curDialogue];
 

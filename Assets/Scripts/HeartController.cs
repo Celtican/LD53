@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HeartController : MonoBehaviour
@@ -23,6 +24,21 @@ public class HeartController : MonoBehaviour
         instance = this;
         numHearts = heartImages.Length;
         onLose.AddListener(() => PauseController.instance.Pause());
+    }
+
+    private void Start()
+    {
+        Time.timeScale = 1;
+        hurtTexture.color = Color.white;
+        hurtTexture.DOFade(0, 5).SetUpdate(true);
+        onLose.AddListener(() =>
+        {
+            Timer.Register(2.1f, () =>
+            {
+                hurtTexture.DOColor(Color.white, 5).SetUpdate(true);
+                Timer.Register(5.1f, () => SceneManager.LoadScene(SceneManager.GetActiveScene().name), null, false, true);
+            }, null, false, true);
+        });
     }
 
     private void Update()

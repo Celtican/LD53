@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class TowerGenerationController : MonoBehaviour
 {
@@ -17,6 +19,12 @@ public class TowerGenerationController : MonoBehaviour
 
     private int stock;
     private float timeUntilNextStock;
+
+    private void Start()
+    {
+        stock = maxStock;
+        CreateTowerButtons();
+    }
 
     public void Update()
     {
@@ -94,6 +102,21 @@ public class TowerGenerationController : MonoBehaviour
 
             if (!exists)
             {
+                switch (towerPrefabs[index].GetComponent<Tower>().rarity)
+                {
+                    case Tower.Rarity.Common:
+                        break;
+                    case Tower.Rarity.Rare:
+                        if (Random.Range(0, 6) > 0) continue;
+                        break;
+                    case Tower.Rarity.Legendary:
+                        if (Random.Range(0, 12) > 0) continue;
+                        break;
+                    case Tower.Rarity.Corporate:
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+                
                 towers[numTowers] = index;
                 numTowers++;
             }
