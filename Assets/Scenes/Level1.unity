@@ -4302,23 +4302,11 @@ MonoBehaviour:
     timeBetweenSpawns: 2
     timeAfterWave: 0
   - enemyPrefab: {fileID: 7870470337297833080, guid: 0276d4e5d58e6db478a8dd4c5dcdb283, type: 3}
-    numEnemiesToSpawn: 6
+    numEnemiesToSpawn: 12
     timeBetweenSpawns: 0.5
     timeAfterWave: 0
   - enemyPrefab: {fileID: 7870470337297833080, guid: 0276d4e5d58e6db478a8dd4c5dcdb283, type: 3}
-    numEnemiesToSpawn: 20
-    timeBetweenSpawns: 1
-    timeAfterWave: 0
-  - enemyPrefab: {fileID: 7870470337297833080, guid: 0276d4e5d58e6db478a8dd4c5dcdb283, type: 3}
-    numEnemiesToSpawn: 20
-    timeBetweenSpawns: 0.5
-    timeAfterWave: 0
-  - enemyPrefab: {fileID: 7870470337297833080, guid: fc1d66b36037e55459892437fbcdc2d9, type: 3}
-    numEnemiesToSpawn: 10
-    timeBetweenSpawns: 1
-    timeAfterWave: 0
-  - enemyPrefab: {fileID: 7870470337297833080, guid: fc1d66b36037e55459892437fbcdc2d9, type: 3}
-    numEnemiesToSpawn: 20
+    numEnemiesToSpawn: 40
     timeBetweenSpawns: 0.5
     timeAfterWave: 0
   - enemyPrefab: {fileID: 7870470337297833080, guid: 0276d4e5d58e6db478a8dd4c5dcdb283, type: 3}
@@ -4326,7 +4314,19 @@ MonoBehaviour:
     timeBetweenSpawns: 0.25
     timeAfterWave: 0
   - enemyPrefab: {fileID: 7870470337297833080, guid: fc1d66b36037e55459892437fbcdc2d9, type: 3}
-    numEnemiesToSpawn: 40
+    numEnemiesToSpawn: 10
+    timeBetweenSpawns: 0.5
+    timeAfterWave: 0
+  - enemyPrefab: {fileID: 7870470337297833080, guid: fc1d66b36037e55459892437fbcdc2d9, type: 3}
+    numEnemiesToSpawn: 20
+    timeBetweenSpawns: 0.5
+    timeAfterWave: 0
+  - enemyPrefab: {fileID: 7870470337297833080, guid: 0276d4e5d58e6db478a8dd4c5dcdb283, type: 3}
+    numEnemiesToSpawn: 100
+    timeBetweenSpawns: 0.25
+    timeAfterWave: 0
+  - enemyPrefab: {fileID: 7870470337297833080, guid: fc1d66b36037e55459892437fbcdc2d9, type: 3}
+    numEnemiesToSpawn: 100
     timeBetweenSpawns: 0.25
     timeAfterWave: 0
   onEndWave:
@@ -52383,6 +52383,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3387123649976186573, guid: d44abf0b484bf294baa6ca33935c730f, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 524948127}
     - target: {fileID: 3387123650895069268, guid: d44abf0b484bf294baa6ca33935c730f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -52485,7 +52489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3387123651347817730, guid: d44abf0b484bf294baa6ca33935c730f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3387123651347817730, guid: d44abf0b484bf294baa6ca33935c730f, type: 3}
       propertyPath: m_AnchoredPosition.y

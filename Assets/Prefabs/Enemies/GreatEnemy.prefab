@@ -693,7 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 1
-  health: 100
+  health: 300
   soundOnDamage: {fileID: 0}
   soundOnDeath: {fileID: 0}
   onDie:

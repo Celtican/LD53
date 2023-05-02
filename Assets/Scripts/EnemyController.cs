@@ -127,7 +127,7 @@ public class EnemyController : MonoBehaviour
             {
                 // ... then play the damage sound effect!
                 // PlayClipAtPoint is an easy (but messy) way of playing a sound effect even after the object is destroyed.
-                AudioSource.PlayClipAtPoint(soundOnDeath, new Vector3(0, 0, -10), audioSource.volume);
+                AudioSource.PlayClipAtPoint(soundOnDeath, Camera.main.transform.position, audioSource.volume);
             }
         }
         else

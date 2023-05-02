@@ -17,6 +17,8 @@ public class HeartController : MonoBehaviour
     [SerializeField] private Image[] heartImages;
     private int numHearts;
 
+    public AudioSource music;
+
     private bool damagedThisFrame = false;
 
     private void Awake()
@@ -24,6 +26,7 @@ public class HeartController : MonoBehaviour
         instance = this;
         numHearts = heartImages.Length;
         onLose.AddListener(() => PauseController.instance.Pause());
+        onLose.AddListener(() => music.Stop());
     }
 
     private void Start()
@@ -53,6 +56,8 @@ public class HeartController : MonoBehaviour
         damagedThisFrame = true;
         numHearts--;
         heartImages[numHearts].color = Color.clear;
+
+        GetComponent<AudioSource>().Play();
 
         hurtTexture.color = Color.white;
         hurtTexture.DOFade(0, 2).SetUpdate(true);
