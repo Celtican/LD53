@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -16,9 +17,15 @@ public class TowerGenerationController : MonoBehaviour
     public StatusDisplay statusDisplay;
 
     public GameObject[] towerPrefabs;
+    public GameObject[] startingPrefabs;
+
+    public UnityEvent onFirstPlace;
 
     private int stock;
     private float timeUntilNextStock;
+
+    private bool firstTowers = true;
+    private bool placedFirstTower = false;
 
     private void Start()
     {
@@ -52,6 +59,11 @@ public class TowerGenerationController : MonoBehaviour
 
     public void TowerPlaced()
     {
+        if (!placedFirstTower)
+        {
+            placedFirstTower = true;
+            onFirstPlace.Invoke();
+        }
         stock--;
         DeleteTowerButtons();
         if (stock >= 1) CreateTowerButtons();
@@ -80,6 +92,12 @@ public class TowerGenerationController : MonoBehaviour
 
     private GameObject[] GetRandomTowerPrefabs()
     {
+        if (firstTowers)
+        {
+            firstTowers = false;
+            return startingPrefabs;
+        }
+        
         int numTowers = 0;
         int[] towers = new int[numButtons];
         for (int i = 0; i < towers.Length; i++)

@@ -1867,6 +1867,13 @@ MonoBehaviour:
   - {fileID: 3858564201992778506, guid: be8a50f142d9be84abcd607c61f14ee6, type: 3}
   - {fileID: 3858564201992778506, guid: e0448b379e772a9479534e24d5964d82, type: 3}
   - {fileID: 582585572545587433, guid: 9b0806a307e178344a492ab783f478ed, type: 3}
+  startingPrefabs:
+  - {fileID: 3858564201992778506, guid: bbdb229902d9a374ba59f528083d699d, type: 3}
+  - {fileID: 3858564201992778506, guid: 1ff8233ae819bfb44b4dc86af3ec85fe, type: 3}
+  - {fileID: 3858564201992778506, guid: b0ee7697b24100b418eeb86f8d0e0250, type: 3}
+  onFirstPlace:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3387123651347817729
 GameObject:
   m_ObjectHideFlags: 0
